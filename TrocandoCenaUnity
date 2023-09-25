@@ -1,0 +1,24 @@
+//existem diversas formas de ter trocas de cena na Unity, por toque em botão, por tempo e etc
+//aqui vou mostrar como trocar de cena depois de um tempo pela cena desejada
+// leve em consideração como as cenas estão sobrepostas no seu player settings antes de buildar seu jogo
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class LevelLoader : MonoBehaviour
+{
+    public float delay = 2.85f;
+    // Cena irá ser trocada após 2,85 segundos
+    void Start()
+    {
+        Invoke("NextScene", delay);
+    }
+    // Update is called once per frame    
+    void NextScene()
+    {
+        SceneManager.LoadScene("nomedasuacena", LoadSceneMode.Single);
+
+    }
+}
